@@ -1,0 +1,83 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Generated API from REST_API project",
+    "description": "Auto-generated collection from the REST_API project. Contains endpoints discovered from the Commander ASP.NET Core API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Commands",
+      "item": [
+        {
+          "name": "Get All Commands",
+          "id": "c7dadc4a-8c46-4fed-b7ad-12a620c7b3d4",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n    {\r\n        \"id\": 0,\r\n        \"howTo\": \"Boil an egg\",\r\n        \"line\": \"Boil water\",\r\n        \"platform\": \"Kettle & Pan\"\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"howTo\": \"Cut bread\",\r\n        \"line\": \"Get a knife\",\r\n        \"platform\": \"Knife & Chopping Board\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"howTo\": \"Make a cup of coffee\",\r\n        \"line\": \"Place ground coffee in machine  & add water\",\r\n        \"platform\": \"Coffee machine & Cup\"\r\n    }   \r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/commands",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "commands"
+              ]
+            },
+            "description": "Retrieves all commands from the repository."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Command By Id",
+          "id": "d439a0f5-1c96-41ad-88c6-055a2c4f844f",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/commands/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "commands",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "The ID of the command to retrieve"
+                }
+              ]
+            },
+            "description": "Retrieves a specific command by its ID."
+          },
+          "response": []
+        }
+      ],
+      "id": "870af97c-0870-44fa-98db-71c108099c5a",
+      "description": "Endpoints for managing commands"
+    }
+  ],
+  "variable": [
+    {
+      "id": "7c0a9010-1901-4cee-8247-47eef4387b76",
+      "key": "baseUrl",
+      "value": "https://localhost:5001",
+      "type": "string",
+      "description": "Base URL for the API. Update this to match your server address."
+    }
+  ]
+}
