@@ -17,7 +17,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "[\r\n    {\r\n        \"id\": 0,\r\n        \"howTo\": \"Boil an egg\",\r\n        \"line\": \"Boil water\",\r\n        \"platform\": \"Kettle & Pan\"\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"howTo\": \"Cut bread\",\r\n        \"line\": \"Get a knife\",\r\n        \"platform\": \"Knife & Chopping Board\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"howTo\": \"Make a cup of coffee\",\r\n        \"line\": \"Place ground coffee in machine  & add water\",\r\n        \"platform\": \"Coffee machine & Cup\"\r\n    }   \r\n]",
+              "raw": "",
               "options": {
                 "raw": {
                   "language": "json"
@@ -45,21 +45,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/commands/:id",
+              "raw": "{{baseUrl}}/api/commands/1",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "api",
                 "commands",
-                ":id"
-              ],
-              "variable": [
-                {
-                  "key": "id",
-                  "value": "1",
-                  "description": "The ID of the command to retrieve"
-                }
+                "1"
               ]
             },
             "description": "Retrieves a specific command by its ID."
