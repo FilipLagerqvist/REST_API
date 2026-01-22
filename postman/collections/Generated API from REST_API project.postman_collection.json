@@ -58,6 +58,35 @@
             "description": "Retrieves a specific command by its ID."
           },
           "response": []
+        },
+        {
+          "name": "Create Command",
+          "id": "b2a3a499-780f-43e1-9770-b0b1a3106f0d",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n         \"howTo\": \"Run a .NET Core app\",\r\n         \"line\": \"dotnet run\",\r\n         \"platform\": \".NET Core CLI\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/commands/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "commands",
+                ""
+              ]
+            }
+          },
+          "response": []
         }
       ],
       "id": "870af97c-0870-44fa-98db-71c108099c5a",
