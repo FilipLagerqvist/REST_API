@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 var cs = builder.Configuration.GetConnectionString("CommanderConnection");
 builder.Services.AddDbContext<CommanderContext>(opt => opt.UseSqlServer(cs));
 builder.Services.AddControllers();
-//builder.Services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
 builder.Services.AddOpenApi();
 
