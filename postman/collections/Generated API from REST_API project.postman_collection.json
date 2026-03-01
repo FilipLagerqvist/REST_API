@@ -67,7 +67,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": " {\r\n         \"howTo\": \"Run a .NET Core app\",\r\n         \"line\": \"dotnet run\",\r\n         \"platform\": \".NET Core CLI\"\r\n}",
+              "raw": " {\r\n         \"howTo\": \"Run a .NET Core app\",\r\n         \"line\": \"dotnet run\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -84,6 +84,18 @@
                 "commands",
                 ""
               ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Put Command",
+          "id": "c7b439a1-6a80-4136-bee4-2ebab2a7910f",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
             }
           },
           "response": []

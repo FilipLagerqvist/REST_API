@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace Commander.DTOs;
-public class CommandCreateDto
+public class CommandUpdateDto
 {
     [Required]
     [MaxLength(250)]
