@@ -1,7 +1,9 @@
 using AutoMapper;
+using Azure;
 using Commander.Data;
 using Commander.DTOs;
 using Commander.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Commander.Controllers;
@@ -72,4 +74,48 @@ public class CommandsController : ControllerBase
 
         return NoContent();
     }    
+
+    // PATCH api/commands/{id}
+    [HttpPatch("{id}")]
+    [Consumes("application/json-patch+json")]
+    public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> patchDoc)
+    {
+        var commandModelFromRepo = _repository.GetCommandById(id);
+
+        if (commandModelFromRepo == null)
+        {
+            return NotFound();
+        }
+
+        var commandToPatch = _mapper.Map<CommandUpdateDto>(commandModelFromRepo);
+        patchDoc.ApplyTo(commandToPatch, ModelState);
+
+        if (!TryValidateModel(commandToPatch))
+        {
+            return ValidationProblem(ModelState);
+        }
+
+        _mapper.Map(commandToPatch, commandModelFromRepo);
+        _repository.UpdateCommand(commandModelFromRepo);
+        _repository.SaveChanges();
+
+        return NoContent();
+    }
+
+    // DELETE api/commands/{id}
+    [HttpDelete("{id}")]
+    public ActionResult DeleteCommand(int id)
+    {
+        var commandModelFromRepo = _repository.GetCommandById(id);
+
+        if (commandModelFromRepo == null)
+        {
+            return NotFound();
+        }
+
+        _repository.DeleteCommand(commandModelFromRepo);
+        _repository.SaveChanges();
+
+        return NoContent();
+    }
 }

@@ -1,0 +1,5 @@
+$kind: http-request
+description: Retrieves a specific command by its ID.
+url: "{{baseUrl}}/api/commands/1"
+method: GET
+order: 2000

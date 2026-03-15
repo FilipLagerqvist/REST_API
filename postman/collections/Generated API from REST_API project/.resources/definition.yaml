@@ -1,0 +1,5 @@
+$kind: collection
+description: Auto-generated collection from the REST_API project. Contains
+  endpoints discovered from the Commander ASP.NET Core API.
+variables:
+  baseUrl: https://localhost:5001

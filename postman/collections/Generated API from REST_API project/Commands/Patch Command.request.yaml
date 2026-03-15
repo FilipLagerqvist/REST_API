@@ -1,0 +1,19 @@
+$kind: http-request
+name: Patch Command
+url: "{{baseUrl}}/api/commands/3"
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application(json-patch+json
+body:
+  type: json
+  content: "[\r
+
+    \  { \"op\": \"replace\", \"path\": \"/howTo\", \"value\": \"Some new
+    value\" }\r
+
+    ]"
+settings:
+  disabledSystemHeaders:
+    - content-type
+order: 5000
